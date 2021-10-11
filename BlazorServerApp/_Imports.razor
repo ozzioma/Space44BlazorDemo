@@ -1,4 +1,6 @@
-﻿@using System.Net.Http
+﻿@attribute [Microsoft.AspNetCore.Authorization.Authorize]
+
+@using System.Net.Http
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Components.Forms
@@ -8,3 +10,22 @@
 @using Microsoft.JSInterop
 @using BlazorServerApp
 @using BlazorServerApp.Shared
+
+@using Application.Infrastructure
+@using Application.UseCases.Auth
+@using Application.UseCases.Student
+@using Common
+@using Persistence
+
+@using AntDesign
+
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Grids
+@*@using Syncfusion.Blazor.TreeGrid*@
+@using Syncfusion.Blazor.Data
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.SplitButtons
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Calendars

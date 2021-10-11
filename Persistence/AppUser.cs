@@ -1,7 +1,8 @@
-﻿namespace Persistence
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace Persistence
 {
-    public class AppUser
+    public class AppUser : IdentityUser
     {
-        
     }
 }

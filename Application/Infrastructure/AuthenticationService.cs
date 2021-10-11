@@ -11,6 +11,6 @@ namespace Application.Infrastructure
         Task<ApiResponse<CommandResult<LoginResponse>>> Login([Body] UserLoginCommand command);
 
         [Post("/Account/register")]
-        Task<ApiResponse<CommandResult<RegisterResponse>>> Login([Body] AccountRegisterCommand command);
+        Task<ApiResponse<CommandResult<RegisterResponse>>> Register([Body] AccountRegisterCommand command);
     }
 }

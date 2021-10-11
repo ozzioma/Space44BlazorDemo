@@ -1,6 +1,433 @@
-﻿@page "/StudentsGridPage"
-<h3>StudentsGridPage</h3>
+﻿@page "/students"
+
+@using System.ComponentModel
+@using System.Text.Json
+@using AntDesign.TableModels
+@using BlazorServerApp.Config
+@using Microsoft.Extensions.Logging
+@using Newtonsoft.Json
+@using Simple.OData.Client
+
+
+<h3>Manage Space44 Students</h3>
+
+
+<span class="error">@ErrorDetails</span>
+
+<SfGrid @ref="grid" ID="gridStudents" TValue="Student" EnablePersistence="false"
+        Query="@QueryGrid"
+        AllowPaging="true" AllowFiltering="true" AllowSelection="true" EnableAltRow="true"
+        AllowResizing="true" ShowColumnChooser="true" ShowColumnMenu="true" Width="100%" Height="400"
+        AllowExcelExport="true" AllowPdfExport="true" AllowTextWrap="false" AllowSorting="true"
+        AllowMultiSorting="true" AllowGrouping="true" AllowReordering="true" AllowRowDragAndDrop="false">
+
+    <SfDataManager Url="@ODATA_RESOURCE_URL" CrossDomain="true" Headers=@HeaderData
+                   Adaptor="Adaptors.ODataV4Adaptor">
+    </SfDataManager>
+    <GridPageSettings EnableQueryString="true" PageCount="10" PageSizes="true"></GridPageSettings>
+
+    <GridEvents TValue="Student" OnActionFailure="@ActionFailure"></GridEvents>
+
+    <GridEditSettings AllowAdding="false" AllowEditing="false" AllowDeleting="false"
+                      ShowDeleteConfirmDialog="false" Mode="EditMode.Dialog">
+    </GridEditSettings>
+
+    @* <GridSelectionSettings Type="SelectionType.Multiple"></GridSelectionSettings> *@
+
+    <GridFilterSettings Columns="@filterColumns" Type="Syncfusion.Blazor.Grids.FilterType.Menu" ShowFilterBarStatus="true">
+
+    </GridFilterSettings>
+
+
+    <SfToolbar CssClass="d-flex justify-content-between w-100-full py-2">
+        <ToolbarItems>
+            <ToolbarItem Type="ItemType.Input" CssClass="">
+                <Template>
+                    <div class="btn-toolbar mb-3">
+
+                        <div class="input-group p-3">
+
+                            <div class="input-group-prepend">
+                                <span class="input-group-text text-dark" @onclick="OnRefresh">
+                                    <i class="oi oi-reload font-weight-bold"></i>&nbsp;Refresh
+                                </span>
+                            </div>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text text-dark" @onclick="OnDownload">
+                                    <i class="oi oi-cloud-download font-weight-bold"></i>&nbsp;Download CSV
+                                </span>
+                            </div>
+                            <div class="input-group-append">
+                                <div class="input-group-text text-dark" @onclick="OnAddRow">
+                                    <i class="oi oi-plus font-weight-bold"></i>&nbsp;Add New Student
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </Template>
+            </ToolbarItem>
+            <ToolbarItem Type="ItemType.Input" CssClass="">
+                <Template>
+
+                    <div class="btn-toolbar mb-3 ml-3" role="toolbar">
+
+                        <div class="input-group">
+
+                            <input type="text" size="40" class="form-control text-dark"
+                                   @bind-value="@searchText" @bind-value:event="oninput" @onkeyup="OnSearchEnter"
+                                   placeholder="Enter keywords">
+
+                            <div class="input-group-append">
+                                <span class="input-group-text text-dark" @onclick="OnClearSearch">
+                                    <i class="oi oi-delete font-weight-bold2"></i>
+                                </span>
+                            </div>
+                            <div class="input-group-append">
+                                <div class="input-group-text text-dark" @onclick="OnSearch">
+                                    <i class="oi oi-magnifying-glass font-weight-bold"></i>&nbsp;Search
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </Template>
+            </ToolbarItem>
+
+        </ToolbarItems>
+    </SfToolbar>
+
+
+    <GridColumns>
+
+        <GridColumn HeaderText="#" TextAlign="TextAlign.Justify" Width="100px">
+            <Template>
+                @{
+                    var row = (context as Student);
+
+                    <div class="d-flex flex-row justify-content-center2">
+
+                        <a class="btn btn-sm btn-rounded btn-outline btn-grid-inline text-gray-2 font-weight-bold2 mr-2"
+                           @onclick="@(e => OnEditRow(row))">
+                            <i class="oi oi-pencil font-weight-bold" aria-hidden="true"></i>
+                        </a>
+
+                        <a class="btn btn-sm btn-rounded btn-outline btn-grid-inline text-gray-4 font-weight-bold2 mr-0"
+                           @onclick="@(e => OnDeleteRow(row))">
+                            <i class="oi oi-delete font-weight-bold" aria-hidden="true"></i>
+                        </a>
+
+                    </div>
+
+                }
+            </Template>
+        </GridColumn>
+
+
+        <GridColumn Field=@nameof(Student.Id) HeaderText="Id" AutoFit="true"></GridColumn>
+        <GridColumn Field=@nameof(Student.UserName) HeaderText="User name" AutoFit="true"></GridColumn>
+        <GridColumn Field=@nameof(Student.FirstName) HeaderText="First name" AutoFit="true"></GridColumn>
+        <GridColumn Field=@nameof(Student.LastName) HeaderText="Last name" AutoFit="true"></GridColumn>
+        <GridColumn Field=@nameof(Student.Age) HeaderText="Age" Format="n0" AutoFit="true"></GridColumn>
+        <GridColumn Field=@nameof(Student.Career) HeaderText="Career" AutoFit="true"></GridColumn>
+
+    </GridColumns>
+
+</SfGrid>
+
+
+<Drawer @ref="@createDrawer" Closable="true" Visible="showCreateDrawer" Title='("Add New Student")'
+        OnClose="onCreateDone">
+
+    <StudentCreateForm @ref="@createForm" @bind-Model="@CreateModel" @bind-ShowModal="@showCreateDrawer"></StudentCreateForm>
+
+</Drawer>
+
+
+<Drawer @ref="@editDrawer" Closable="true" Visible="showEditDrawer" Title='("Edit Student")'
+        OnClose="onEditDone">
+
+    <StudentEditForm @ref="@editForm" @bind-Model="@UpdateModel" @bind-ShowModal="@showEditDrawer"></StudentEditForm>
+
+</Drawer>
+
 
 @code {
-    
+
+    [Inject]
+    ILogger<StudentsGridPage> Logger { get; set; }
+
+    [Inject]
+    BrowserService BrowserService { get; set; }
+
+    [Inject]
+    EntityDataService DataService { get; set; }
+
+    [Inject]
+    AntDesign.ModalService modalService { get; set; }
+
+    [Inject]
+    NotificationService notificationService { get; set; }
+
+    [Inject]
+    protected IJSRuntime JsRuntime { get; set; }
+
+    [Inject]
+    AutoMapper.IMapper Mapper { get; set; }
+
+    [Inject]
+    WebConfigHelper Config { get; set; }
+
+    SfGrid<Student> grid;
+
+    string ODATA_RESOURCE_URL => $"{Config.ENTITY_ODATA_HOST}/{nameof(Student)}";
+    private Query QueryGrid; // = new Query();
+
+
+    StudentCreateCommand CreateModel { get; set; }
+    StudentUpdateCommand UpdateModel { get; set; }
+    StudentDeleteCommand DeleteModel { get; set; }
+
+    StudentEditForm editForm;
+    StudentCreateForm createForm;
+
+    string ErrorDetails = "";
+
+    BrowserDimension BrowserDimension;
+
+    Drawer createDrawer;
+    Drawer editDrawer;
+    bool showCreateDrawer { get; set; } = false;
+    bool showEditDrawer { get; set; } = false;
+
+    private List<GridFilterColumn> filterColumns = new List<GridFilterColumn>();
+    string searchText;
+
+    private IDictionary<string, string> HeaderData;
+
+
+    protected async override Task OnInitializedAsync()
+    {
+        HeaderData = new Dictionary<string, string>();
+        HeaderData.Add("Authorization", $"Bearer {Config.AccessToken}");
+
+        CreateModel = new StudentCreateCommand();
+        UpdateModel = new StudentUpdateCommand();
+        DeleteModel = new StudentDeleteCommand();
+
+        QueryGrid = new Query();
+
+    //await base.OnInitializedAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            BrowserDimension = await BrowserService.GetDimensions();
+
+            createDrawer.Width = (int) (BrowserDimension.Width * 0.50);
+            editDrawer.Width = (int) (BrowserDimension.Width * 0.50);
+        }
+    }
+
+
+    protected override Task OnParametersSetAsync()
+    {
+        return base.OnParametersSetAsync();
+    }
+
+
+    public void ActionFailure(Syncfusion.Blazor.Grids.FailureEventArgs args)
+    {
+        this.ErrorDetails = args.Error.ToString();
+        StateHasChanged();
+    }
+
+
+    async Task onCreate()
+    {
+        showCreateDrawer = true;
+    }
+
+    async Task onCreateDone()
+    {
+        showCreateDrawer = false;
+        await OnRefresh();
+    }
+
+    async Task onEdit()
+    {
+        showEditDrawer = true;
+    }
+
+    async Task onEditDone()
+    {
+        showEditDrawer = false;
+        await OnRefresh();
+    }
+
+
+    private async Task OnAddRow()
+    {
+        CreateModel = new StudentCreateCommand();
+        await onCreate();
+    }
+
+
+    private async Task OnViewRow(Student row)
+    {
+    }
+
+    private async Task OnEditRow(Student row)
+    {
+        UpdateModel = Mapper.Map<StudentUpdateCommand>(row);
+
+        await onEdit();
+    }
+
+
+    private async Task OnDeleteRow(Student row)
+    {
+        bool isOk = false;
+
+        isOk = await modalService.ConfirmAsync(new ConfirmOptions()
+        {
+            Title = "Are you sure?",
+    //Icon = icon,
+            Content = "You will not be able to recover this record after deleting!",
+        });
+
+
+        if (isOk)
+        {
+            DeleteModel.Id = row.Id;
+
+            var rsp = await DataService.Delete<StudentDeleteCommand, CommandResult<string>>(nameof(Student), DeleteModel);
+
+            if (!rsp.IsSuccessStatusCode)
+            {
+    //var rspContent = JsonSerializer.Deserialize<CommandResult<string>>(rsp.Error.Content);
+                var rspContent = JsonConvert.DeserializeObject<CommandResult<string>>(rsp.Error.Content);
+
+                var msg = rspContent?.Response;
+                if (rspContent != null && rspContent.ValidationErrors != null && rspContent.ValidationErrors.Any())
+                {
+                    msg = rspContent.ValidationErrors[0].Error;
+                }
+
+                await notificationService.Open(new NotificationConfig()
+                {
+                    Message = "Error deleting record",
+                    Description = msg,
+                    NotificationType = NotificationType.Error
+                });
+            }
+            else
+            {
+                await notificationService.Open(new NotificationConfig()
+                {
+                    Message = "Deleted",
+                    Description = rsp.Content.Response, //"Record deleted.",
+                    NotificationType = NotificationType.Success
+                });
+                await OnRefresh();
+            }
+        }
+    }
+
+    private async Task OnRefresh()
+    {
+    //Console.WriteLine($"OnRefresh(), searchText->{searchText}");
+
+        searchText = string.Empty;
+        QueryGrid = new Query();
+        grid.Refresh();
+
+        await Task.CompletedTask;
+    }
+
+
+    private async Task OnDownload()
+    {
+        await grid.ExportToCsvAsync();
+        await Task.CompletedTask;
+    }
+
+
+    private async Task OnSearchEnter(Microsoft.AspNetCore.Components.Web.KeyboardEventArgs e)
+    {
+    //Console.WriteLine($"OnSearchEnter, searchText->{searchText}");
+
+    //Console.WriteLine($"code->{e.Code}, key-> {e.Key}");
+
+        if (e.Key == "Enter")
+        {
+            if (!string.IsNullOrWhiteSpace(searchText))
+                await OnSearch();
+            else
+                await OnRefresh();
+        }
+    }
+
+    private async Task OnSearch()
+    {
+    //Console.WriteLine($"OnSearch, searchText->{searchText}");
+
+        if (!string.IsNullOrWhiteSpace(searchText))
+        {
+            WhereFilter userNameFilter = new WhereFilter
+            {
+                Field = nameof(Student.UserName),
+                Operator = "contains",
+                value = searchText
+            };
+
+            WhereFilter firstNameFilter = new WhereFilter
+            {
+                Field = nameof(Student.FirstName),
+                Operator = "contains",
+                value = searchText
+            };
+
+            WhereFilter lastNameFilter = new WhereFilter
+            {
+                Field = nameof(Student.LastName),
+                Operator = "contains",
+                value = searchText
+            };
+
+            WhereFilter careerFilter = new WhereFilter
+            {
+                Field = nameof(Student.Career),
+                Operator = "contains",
+                value = searchText
+            };
+
+
+            QueryGrid = new Query().Where(userNameFilter.Or(firstNameFilter).Or(lastNameFilter).Or(careerFilter));
+
+            this.grid.Refresh();
+        }
+        else
+        {
+            await OnRefresh();
+        }
+    }
+
+    private async Task OnClearSearch()
+    {
+    //Console.WriteLine($"OnClearSearch, searchText->{searchText}");
+
+        if (!string.IsNullOrWhiteSpace(searchText))
+        {
+            await OnRefresh();
+        }
+    }
+
+
 }

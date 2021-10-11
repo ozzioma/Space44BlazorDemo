@@ -1,4 +1,4 @@
-﻿namespace Application.UseCases.Student
+﻿namespace Application.UseCases.Auth
 {
     public class RegisterResponse
     {

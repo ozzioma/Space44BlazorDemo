@@ -1,5 +1,225 @@
-﻿<h3>StudentEditForm</h3>
+﻿@using Microsoft.AspNetCore.Components
+@using Microsoft.Extensions.Logging
+@using System.Text.Json
+@using Newtonsoft.Json
+
+
+<EditForm Model="@Model">
+    <FluentValidationValidator/>
+
+
+    <ValidationSummary/>
+
+    <br/>
+
+    <div class="form-row">
+        <div class="form-group col-md-10">
+            <label>User Name</label>
+            <SfTextBox Multiline="false" Placeholder="User Name" CssClass="form-controlx" @bind-Value=@Model.UserName
+                       OnBlur="OnBlur">
+            </SfTextBox>
+        </div>
+
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>First Name</label>
+            <SfTextBox Multiline="false" Placeholder="First Name" CssClass="form-controlx" @bind-Value=@Model.FirstName
+                       OnBlur="OnBlur">
+            </SfTextBox>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label>Last Name</label>
+            <SfTextBox Multiline="false" Placeholder="Last Name" CssClass="form-controlx"
+                       @bind-Value=@Model.LastName OnBlur="OnBlur">
+            </SfTextBox>
+        </div>
+
+
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group col-md-6">
+            <label>Age</label>
+            <SfNumericTextBox Decimals="0" Multiline="false" Placeholder="Age" CssClass="form-controlx"
+                              @bind-Value=@Model.Age OnBlur="OnBlur">
+            </SfNumericTextBox>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label>Career</label>
+            <SfTextBox Multiline="false" Placeholder="Career" CssClass="form-controlx"
+                       @bind-Value=@Model.Career OnBlur="OnBlur">
+            </SfTextBox>
+        </div>
+
+    </div>
+
+    <br/>
+
+    <button type="submit" class="btn btn-primary" @onclick="OnSaveClose">Save</button>
+    <button class="btn btn-light ml-2" @onclick="OnCancel">Cancel</button>
+
+</EditForm>
+
+
+<Modal Title="@("Notification")" Visible="@showPopup" DestroyOnClose="true"
+       OnOk="OnCancel" OkText="@("Ok")"
+       OnCancel="OnCancel" CancelText="@("Cancel")">
+    <p>@notificationText</p>
+</Modal>
+
 
 @code {
-    
+
+
+    SfComboBox<long, string> comboTypes;
+    SfDropDownList<long, string> lstTypes;
+
+    private Query Query_Combo; // = new Query();
+
+    string notificationText;
+    bool showPopup = false;
+
+
+    [Parameter]
+    public StudentUpdateCommand Model { get; set; }
+
+
+    [Parameter]
+    public EventCallback<StudentUpdateCommand> ModelChanged { get; set; }
+
+    [Parameter]
+    public bool ShowModal { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> ShowModalChanged { get; set; }
+
+    [Inject]
+    ILogger<StudentEditForm> Logger { get; set; }
+
+    [Inject]
+    protected IJSRuntime JsRuntime { get; set; }
+
+    [Inject]
+    ModalService modalService { get; set; }
+
+    [Inject]
+    NotificationService notificationService { get; set; }
+
+    [Inject]
+    AutoMapper.IMapper Mapper { get; set; }
+
+    [Inject]
+    WebConfigHelper Config { get; set; }
+
+
+    [Inject]
+    EntityDataService DataService { get; set; }
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+
+        if (firstRender)
+        {
+        }
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        Query_Combo = new Query();
+    }
+
+
+    public async Task OnSaveClose()
+    {
+        var rsp = await DataService.Update<StudentUpdateCommand, CommandResult<StudentViewModel>>(
+            nameof(Student), Model);
+
+        if (!rsp.IsSuccessStatusCode)
+        {
+            //var rspContent = JsonSerializer.Deserialize<CommandResult<string>>(rsp.Error.Content);
+            var rspContent = JsonConvert.DeserializeObject<CommandResult<string>>(rsp.Error.Content);
+
+            var msg = rspContent?.Response;
+            if (rspContent != null && rspContent.ValidationErrors != null && rspContent.ValidationErrors.Any())
+            {
+                msg = rspContent.ValidationErrors[0].Error;
+            }
+
+            await notificationService.Open(new NotificationConfig()
+            {
+                Message = "Error",
+                Description = msg,
+                NotificationType = NotificationType.Error
+            });
+        }
+        else
+        {
+            notificationText = $"Record successfully updated, Id->{rsp.Content.Response.Id}";
+            showPopup = true;
+        }
+    }
+
+
+    public void OnValidSubmit()
+    {
+        showPopup = true;
+
+    //notificationText = $"name->{Model.Name}";
+    }
+
+    public async Task OnOkPopup()
+    {
+    //Modal.Visible = false;
+        ShowModal = false;
+        await ShowModalChanged.InvokeAsync(ShowModal);
+
+        Model = new StudentUpdateCommand();
+        await ModelChanged.InvokeAsync(Model);
+
+        showPopup = false;
+    }
+
+    public async Task OnCancel()
+    {
+        ShowModal = false;
+        await ShowModalChanged.InvokeAsync(ShowModal);
+
+        Model = new StudentUpdateCommand();
+        await ModelChanged.InvokeAsync(Model);
+
+        showPopup = false;
+    }
+
+
+    public async Task OnInput(Microsoft.AspNetCore.Components.ChangeEventArgs args)
+    {
+        await ModelChanged.InvokeAsync(Model);
+    }
+
+    public async Task OnChange(Microsoft.AspNetCore.Components.ChangeEventArgs args)
+    {
+        await ModelChanged.InvokeAsync(Model);
+    }
+
+    public async Task OnBlur(Microsoft.AspNetCore.Components.Web.FocusEventArgs args)
+    {
+        await ModelChanged.InvokeAsync(Model);
+    }
+
+    private async Task onFocus(Microsoft.AspNetCore.Components.Web.FocusEventArgs args)
+    {
+        await ModelChanged.InvokeAsync(Model);
+    }
+
+
 }

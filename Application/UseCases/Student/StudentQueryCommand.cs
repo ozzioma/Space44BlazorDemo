@@ -1,7 +1,10 @@
-﻿namespace Application.UseCases.Student
+﻿using System.Linq;
+using Common;
+using MediatR;
+
+namespace Application.UseCases.Student
 {
-    public class StudentQueryCommand
+    public class StudentQueryCommand : IRequest<CommandResult<IQueryable<Persistence.Student>>>
     {
-        
     }
 }

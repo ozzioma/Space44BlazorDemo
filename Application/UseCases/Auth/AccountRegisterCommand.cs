@@ -2,9 +2,9 @@
 using Common;
 using MediatR;
 
-namespace Application.UseCases.Student
+namespace Application.UseCases.Auth
 {
-    public class AccountRegisterCommand: IRequest<CommandResult<string>>
+    public class AccountRegisterCommand : IRequest<CommandResult<RegisterResponse>>
     {
         [Required] [MaxLength(20)] public string UserName { get; set; }
 

@@ -4,7 +4,7 @@ using FluentValidation.Results;
 using Microsoft.Extensions.Logging;
 using Persistence;
 
-namespace Application.UseCases.Student
+namespace Application.UseCases.Auth
 {
     public class LoginCommandValidator : AbstractValidator<UserLoginCommand>
     {

@@ -4,7 +4,7 @@ using FluentValidation.Results;
 using Microsoft.Extensions.Logging;
 using Persistence;
 
-namespace Application.UseCases.Student
+namespace Application.UseCases.Auth
 {
     public class RegisterCommandValidator : AbstractValidator<AccountRegisterCommand>
     {
@@ -18,6 +18,7 @@ namespace Application.UseCases.Student
             logger = _logger;
 
             RuleFor(p => p.UserName).NotNull().MaximumLength(20);
+            RuleFor(p => p.Password).NotNull().MinimumLength(6).MaximumLength(20);
 
             RuleFor(p => p).Custom((data, context) =>
             {

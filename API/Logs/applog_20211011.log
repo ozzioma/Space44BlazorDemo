@@ -3,3 +3,601 @@
 2021-10-11T01:36:45.1343678+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
 2021-10-11T01:36:45.1349425+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
 2021-10-11T01:36:45.1355421+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T01:37:31.4624778+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T01:37:36.9388937+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T01:37:36.9780035+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T01:37:36.9805409+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T01:37:36.9810072+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T01:37:36.9815314+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T01:40:29.0322908+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T01:41:04.6614567+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T01:41:04.6988825+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T01:41:04.7025038+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T01:41:04.7042260+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T01:41:04.7047657+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T01:41:40.9158736+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T01:41:48.5540958+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T01:41:48.5908670+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T01:41:48.5947196+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T01:41:48.5968410+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T01:41:48.5973892+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T01:45:24.3021861+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T05:43:09.1060426+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T05:43:09.1443809+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T05:43:09.1464732+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T05:43:09.1469656+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T05:43:09.1477340+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T05:43:47.8534975+01:00 [WRN] [Microsoft.AspNetCore.Identity.UserManager] User password validation failed: "PasswordRequiresUpper".
+2021-10-11T05:44:11.9412659+01:00 [WRN] [Microsoft.AspNetCore.Identity.UserManager] User password validation failed: "PasswordRequiresUpper".
+2021-10-11T05:44:24.1130742+01:00 [WRN] [Microsoft.AspNetCore.Identity.UserManager] User password validation failed: "PasswordRequiresUpper".
+2021-10-11T05:46:38.8488047+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T05:46:45.8139650+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T05:46:45.8538354+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T05:46:45.8552543+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T05:46:45.8557464+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T05:46:45.8563616+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T05:46:57.4006078+01:00 [WRN] [Microsoft.AspNetCore.Identity.UserManager] User password validation failed: "PasswordRequiresUpper".
+2021-10-11T05:48:01.8372271+01:00 [ERR] [Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Application.UseCases.Auth.LoginCommandHandler.Handle(UserLoginCommand request, CancellationToken cancellationToken) in F:\blazor\Space44Demo2\Application\UseCases\Auth\LoginCommandHandler.cs:line 64
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at API.Controllers.AccountController.Login(UserLoginCommand model) in F:\blazor\Space44Demo2\API\Controllers\AccountController.cs:line 63
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.OData.Routing.ODataRouteDebugMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-10-11T05:49:35.0406706+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T05:49:42.2764470+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T05:49:42.3162120+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T05:49:42.3186114+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T05:49:42.3191170+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T05:49:42.3196422+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T05:49:52.1076622+01:00 [ERR] [Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware] An unhandled exception has occurred while executing the request.
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Application.UseCases.Auth.LoginCommandHandler.Handle(UserLoginCommand request, CancellationToken cancellationToken) in F:\blazor\Space44Demo2\Application\UseCases\Auth\LoginCommandHandler.cs:line 64
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at API.Controllers.AccountController.Login(UserLoginCommand model) in F:\blazor\Space44Demo2\API\Controllers\AccountController.cs:line 63
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|24_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.OData.Routing.ODataRouteDebugMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2021-10-11T05:54:57.6245554+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T05:55:04.8312731+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T05:55:04.8685622+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T05:55:04.8710498+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T05:55:04.8716881+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T05:55:04.8722676+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T05:55:14.8190250+01:00 [ERR] [API.Config.GlobalErrorHandlerMiddleware] Object reference not set to an instance of an object.
+2021-10-11T05:56:56.2840175+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T05:57:02.0689586+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T05:57:02.1069620+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T05:57:02.1105390+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T05:57:02.1110900+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T05:57:02.1116262+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T05:57:08.1090946+01:00 [ERR] [API.Config.GlobalErrorHandlerMiddleware] Object reference not set to an instance of an object.
+2021-10-11T05:58:59.6245354+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T05:59:05.3425920+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T05:59:05.3851353+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T05:59:05.3861353+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T05:59:05.3867854+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T05:59:05.3873811+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T06:00:30.9948627+01:00 [ERR] [API.Config.GlobalErrorHandlerMiddleware] Handler was not found for request of type MediatR.IRequestHandler`2[Application.UseCases.Student.StudentQueryCommand,Common.CommandResult`1[System.Linq.IQueryable`1[Persistence.Student]]]. Register your handlers with the container. See the samples in GitHub for examples.
+2021-10-11T06:00:45.5974409+01:00 [ERR] [API.Config.GlobalErrorHandlerMiddleware] Handler was not found for request of type MediatR.IRequestHandler`2[Application.UseCases.Student.StudentQueryCommand,Common.CommandResult`1[System.Linq.IQueryable`1[Persistence.Student]]]. Register your handlers with the container. See the samples in GitHub for examples.
+2021-10-11T06:01:28.9968459+01:00 [ERR] [API.Config.GlobalErrorHandlerMiddleware] Handler was not found for request of type MediatR.IRequestHandler`2[Application.UseCases.Student.StudentQueryCommand,Common.CommandResult`1[System.Linq.IQueryable`1[Persistence.Student]]]. Register your handlers with the container. See the samples in GitHub for examples.
+2021-10-11T06:07:35.8744086+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T06:07:42.7089292+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T06:07:42.7472824+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T06:07:42.7503783+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T06:07:42.7508100+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T06:07:42.7513443+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T06:09:01.3897232+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T06:09:07.5196804+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T06:09:07.5586758+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T06:09:07.5600459+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T06:09:07.5611474+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T06:09:07.5625137+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T06:10:45.0750246+01:00 [WRN] [Microsoft.AspNetCore.Identity.UserManager] Invalid password for user.
+2021-10-11T06:12:41.2417074+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T06:12:47.7459157+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T06:12:47.7835936+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T06:12:47.7865325+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T06:12:47.7869733+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T06:12:47.7874807+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T06:13:00.0547141+01:00 [WRN] [Microsoft.AspNetCore.Identity.UserManager] Invalid password for user.
+2021-10-11T06:23:47.2880259+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T06:23:53.8299252+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T06:23:53.8678693+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T06:23:53.8717418+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T06:23:53.8729298+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T06:23:53.8734445+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T06:25:24.2045524+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T06:25:30.7076580+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T06:25:30.7475331+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T06:25:30.7507442+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T06:25:30.7532161+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T06:25:30.7539913+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T13:25:34.5357332+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T14:02:28.9214202+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T14:02:28.9692275+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T14:02:28.9705915+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T14:02:28.9714430+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T14:02:28.9724378+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T14:03:26.5703784+01:00 [ERR] [API.Config.GlobalErrorHandlerMiddleware] Handler was not found for request of type MediatR.IRequestHandler`2[Application.UseCases.Student.StudentCreateCommand,Common.CommandResult`1[Application.UseCases.Student.StudentViewModel]]. Register your handlers with the container. See the samples in GitHub for examples.
+2021-10-11T14:04:25.8003771+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T14:13:50.8049075+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T14:13:50.8447924+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T14:13:50.8463113+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T14:13:50.8477828+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T14:13:50.8501763+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T14:17:27.2740102+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T14:42:14.7828139+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T14:42:14.8215817+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T14:42:14.8232728+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T14:42:14.8244598+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T14:42:14.8252698+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T14:44:29.2031210+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T15:09:28.9600327+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T15:09:28.9962657+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T15:09:28.9977166+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T15:09:29.0008498+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T15:09:29.0021949+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T15:55:46.1347789+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T15:55:52.3886717+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T15:55:52.4245817+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T15:55:52.4255121+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T15:55:52.4261817+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T15:55:52.4268583+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T16:07:31.2498290+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T16:07:37.3641067+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T16:07:37.4019218+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T16:07:37.4092976+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T16:07:37.4117162+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T16:07:37.4134228+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T16:07:57.0925111+01:00 [INF] [API.Controllers.StudentController] login response->{
+  "$id": "1",
+  "response": {
+    "$id": "2",
+    "UserName": null,
+    "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoib3p6eUBvenp5LmNvbSIsImp0aSI6IjljYzc4MjYyLTAyMDUtNGM0Zi1hZWVkLTZhMzcwNTc4MGNiZiIsImV4cCI6MTYzNDA1MTI3NiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDcwIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo3MDcyIn0.GEcO3Obs9YeHSyh1NDCkXDYa2KxMPN5oHgjAkubyI80",
+    "TokenExpirationDate": "2021-10-12T15:07:56Z"
+  },
+  "errorFlag": false,
+  "message": "Login successful",
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T16:13:19.6233898+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T16:31:16.6501772+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T16:31:16.6912954+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T16:31:16.6923629+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T16:31:16.6930827+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T16:31:16.6939071+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T16:35:35.0271664+01:00 [INF] [API.Controllers.StudentController] register response->{
+  "$id": "1",
+  "response": null,
+  "errorFlag": false,
+  "message": "User created",
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T16:35:48.1799460+01:00 [INF] [API.Controllers.StudentController] login response->{
+  "$id": "1",
+  "response": {
+    "$id": "2",
+    "UserName": null,
+    "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9obkBqb2huLmNvbSIsImp0aSI6IjA0ZjUxZjdhLTY3MmItNDlmNC1hYTkwLThhYjFiYWFmM2Y0ZCIsImV4cCI6MTYzNDA1Mjk0OCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDcwIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo3MDcyIn0.y6OhvqJFpUXru-pMaAaWFMbkCQzrxiPCXpzragugl8s",
+    "TokenExpirationDate": "2021-10-12T15:35:48Z"
+  },
+  "errorFlag": false,
+  "message": "Login successful",
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T16:36:09.6588112+01:00 [INF] [API.Controllers.StudentController] login response->{
+  "$id": "1",
+  "response": {
+    "$id": "2",
+    "UserName": null,
+    "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoib3p6eUBvenp5LmNvbSIsImp0aSI6ImI2M2UyNThiLWJiOGItNDIwYy1hODc2LWRiZmE3OTQxYzc3MCIsImV4cCI6MTYzNDA1Mjk2OSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDcwIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo3MDcyIn0.fYeKi20zMuix3y3E9HyVyGh0KEUeQmi2ktfxjpDhQ3Q",
+    "TokenExpirationDate": "2021-10-12T15:36:09Z"
+  },
+  "errorFlag": false,
+  "message": "Login successful",
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T16:36:24.3540631+01:00 [INF] [API.Controllers.StudentController] login response->{
+  "$id": "1",
+  "response": {
+    "$id": "2",
+    "UserName": null,
+    "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoib3p6eUBvenp5LmNvbSIsImp0aSI6IjhmNTllMzM3LWY3YzktNGYxZi04NTA4LTFjODc4YjA0NTE0ZiIsImV4cCI6MTYzNDA1Mjk4NCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDcwIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo3MDcyIn0.uJ9g9Uyiijv8OIQeq3D1_AqLgSpoclqQGmm_zjDxwKk",
+    "TokenExpirationDate": "2021-10-12T15:36:24Z"
+  },
+  "errorFlag": false,
+  "message": "Login successful",
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T17:30:16.5050802+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T17:30:23.4130172+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T17:30:23.4520361+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T17:30:23.4554264+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T17:30:23.4562373+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T17:30:23.4588898+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T17:51:48.1979749+01:00 [ERR] [API.Config.GlobalErrorHandlerMiddleware] The value for OData query '$count' cannot be empty.
+2021-10-11T17:55:00.5146707+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T17:55:12.4229527+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T17:55:12.4708801+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T17:55:12.4721095+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T17:55:12.4729653+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T17:55:12.4738877+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T18:40:56.4528034+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T18:41:06.3302300+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T18:41:06.3823333+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T18:41:06.3835490+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T18:41:06.3843877+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T18:41:06.3864760+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T18:59:24.4220592+01:00 [INF] [API.Controllers.StudentController] login response->{
+  "$id": "1",
+  "response": {
+    "$id": "2",
+    "UserName": null,
+    "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoib3p6eUBvenp5LmNvbSIsImp0aSI6ImUyYjZiZDc3LWQzNmUtNDA2Mi05NjZjLTgwMTRhOTQ0NTI2YSIsImV4cCI6MTYzNDA2MTU2NCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDcwIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo3MDcyIn0.845ZQl_czzCqndxIvYIIptyp8UHVaHKhVDLMRk-K1ow",
+    "TokenExpirationDate": "2021-10-12T17:59:24Z"
+  },
+  "errorFlag": false,
+  "message": "Login successful",
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T19:11:18.6778631+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T19:39:43.3935548+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T19:39:43.4358327+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T19:39:43.4369993+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T19:39:43.4378798+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T19:39:43.4387945+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T19:40:14.1203293+01:00 [INF] [API.Controllers.StudentController] delete request->{
+  "$id": "1",
+  "Id": 1
+}
+2021-10-11T19:40:14.4403439+01:00 [INF] [API.Controllers.StudentController] delete response->{
+  "$id": "1",
+  "response": "Student successfully deleted",
+  "errorFlag": false,
+  "message": null,
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T20:06:07.3525103+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T20:08:04.5980259+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T20:08:04.6525130+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T20:08:04.6545067+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T20:08:04.6552596+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T20:08:04.6560584+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T21:29:44.7246134+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...
+2021-10-11T21:30:06.4747887+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:7071"
+2021-10-11T21:30:06.5191818+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:7070"
+2021-10-11T21:30:06.5205658+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T21:30:06.5214714+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T21:30:06.5224117+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
+2021-10-11T21:31:02.8059917+01:00 [INF] [API.Controllers.StudentController] create request->{
+  "$id": "1",
+  "UserName": "john@john.com",
+  "FirstName": "John",
+  "LastName": "Asas",
+  "Age": 22,
+  "Career": "Dev"
+}
+2021-10-11T21:31:03.3168176+01:00 [INF] [API.Controllers.StudentController] create response->{
+  "$id": "1",
+  "response": {
+    "$id": "2",
+    "Id": 2,
+    "UserName": "john@john.com",
+    "FirstName": "John",
+    "LastName": "Asas",
+    "Age": 22,
+    "Career": "Dev"
+  },
+  "errorFlag": false,
+  "message": null,
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T21:41:10.4852542+01:00 [INF] [API.Controllers.StudentController] create request->{
+  "$id": "1",
+  "UserName": "james@james.com",
+  "FirstName": "James",
+  "LastName": "sdasdas",
+  "Age": 22,
+  "Career": "asdas"
+}
+2021-10-11T21:41:10.5849743+01:00 [INF] [API.Controllers.StudentController] create response->{
+  "$id": "1",
+  "response": {
+    "$id": "2",
+    "Id": 3,
+    "UserName": "james@james.com",
+    "FirstName": "James",
+    "LastName": "sdasdas",
+    "Age": 22,
+    "Career": "asdas"
+  },
+  "errorFlag": false,
+  "message": null,
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T21:44:42.1997630+01:00 [INF] [API.Controllers.StudentController] delete request->{
+  "$id": "1",
+  "Id": 3
+}
+2021-10-11T21:44:42.2832118+01:00 [INF] [API.Controllers.StudentController] delete response->{
+  "$id": "1",
+  "response": "Student successfully deleted",
+  "errorFlag": false,
+  "message": null,
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T21:45:07.5080158+01:00 [INF] [API.Controllers.StudentController] create request->{
+  "$id": "1",
+  "UserName": "james@james.com",
+  "FirstName": "James",
+  "LastName": "Ayaya",
+  "Age": 4354,
+  "Career": "Adas"
+}
+2021-10-11T21:45:07.5636005+01:00 [INF] [API.Controllers.StudentController] create response->{
+  "$id": "1",
+  "response": {
+    "$id": "2",
+    "Id": 4,
+    "UserName": "james@james.com",
+    "FirstName": "James",
+    "LastName": "Ayaya",
+    "Age": 4354,
+    "Career": "Adas"
+  },
+  "errorFlag": false,
+  "message": null,
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T21:56:32.7705320+01:00 [INF] [API.Controllers.StudentController] login response->{
+  "$id": "1",
+  "response": {
+    "$id": "2",
+    "UserName": null,
+    "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoib3p6eUBvenp5LmNvbSIsImp0aSI6IjVmODIzZmJjLTExZDMtNGQ5OC1iMDU5LTU4MDAyNTg2MTU0ZCIsImV4cCI6MTYzNDA3MjE5MiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDcwIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo3MDcyIn0.Rjhg2HoHQnxAZ7yk28alYW9c0hAbBPZizCEvgJTJsqI",
+    "TokenExpirationDate": "2021-10-12T20:56:32Z"
+  },
+  "errorFlag": false,
+  "message": "Login successful",
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T21:58:28.9981980+01:00 [INF] [API.Controllers.StudentController] update request->{
+  "$id": "1",
+  "Id": 4,
+  "UserName": "james@james.com",
+  "FirstName": "James",
+  "LastName": "Ayaya",
+  "Age": 4354,
+  "Career": "Adas"
+}
+2021-10-11T21:58:29.0809150+01:00 [INF] [API.Controllers.StudentController] update response->{
+  "$id": "1",
+  "response": {
+    "$id": "2",
+    "Id": 4,
+    "UserName": "james@james.com",
+    "FirstName": "James",
+    "LastName": "Ayaya",
+    "Age": 4354,
+    "Career": "Adas"
+  },
+  "errorFlag": false,
+  "message": null,
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T21:59:41.0643220+01:00 [INF] [API.Controllers.StudentController] update request->{
+  "$id": "1",
+  "Id": 4,
+  "UserName": "james@james.com",
+  "FirstName": "James",
+  "LastName": "Ayaya",
+  "Age": 4354,
+  "Career": "Adas"
+}
+2021-10-11T21:59:41.1255437+01:00 [INF] [API.Controllers.StudentController] update response->{
+  "$id": "1",
+  "response": {
+    "$id": "2",
+    "Id": 4,
+    "UserName": "james@james.com",
+    "FirstName": "James",
+    "LastName": "Ayaya",
+    "Age": 4354,
+    "Career": "Adas"
+  },
+  "errorFlag": false,
+  "message": null,
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T21:59:48.3741226+01:00 [INF] [API.Controllers.StudentController] update request->{
+  "$id": "1",
+  "Id": 4,
+  "UserName": "james2@james.com",
+  "FirstName": "James2",
+  "LastName": "Ayaya",
+  "Age": 4354,
+  "Career": "Adas"
+}
+2021-10-11T21:59:48.4128352+01:00 [INF] [API.Controllers.StudentController] update response->{
+  "$id": "1",
+  "response": {
+    "$id": "2",
+    "Id": 4,
+    "UserName": "james2@james.com",
+    "FirstName": "James2",
+    "LastName": "Ayaya",
+    "Age": 4354,
+    "Career": "Adas"
+  },
+  "errorFlag": false,
+  "message": null,
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T22:00:02.9294621+01:00 [INF] [API.Controllers.StudentController] update request->{
+  "$id": "1",
+  "Id": 4,
+  "UserName": "james@james.com",
+  "FirstName": "James",
+  "LastName": "Ayaya",
+  "Age": 34,
+  "Career": "Adas"
+}
+2021-10-11T22:00:02.9713327+01:00 [INF] [API.Controllers.StudentController] update response->{
+  "$id": "1",
+  "response": {
+    "$id": "2",
+    "Id": 4,
+    "UserName": "james@james.com",
+    "FirstName": "James",
+    "LastName": "Ayaya",
+    "Age": 34,
+    "Career": "Adas"
+  },
+  "errorFlag": false,
+  "message": null,
+  "validationErrors": null,
+  "Type": null,
+  "Title": null,
+  "Status": 200,
+  "Detail": null,
+  "Instance": null,
+  "Extensions": {}
+}
+2021-10-11T22:13:46.9390298+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...

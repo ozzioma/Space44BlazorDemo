@@ -1,6 +1,96 @@
-﻿@page "/StudentsListPage"
+﻿@page "/students2"
+
+@using System.ComponentModel
+@using AntDesign.TableModels
+@using Microsoft.Extensions.Logging
+@using Simple.OData.Client
+
+@inject WebConfigHelper webConfigHelper
+@inject ILogger<StudentsListPage> logger;
 <h3>StudentsListPage</h3>
 
+<Table
+    DataSource="@studentData"
+    Total="totalRows"
+    Loading="_loading"
+    PageIndex="@pageIndex"
+    PageSize="@pageSize"
+    OnPageIndexChange="PageIndexChanged">
+    <Column @bind-Field="@context.Id"/>
+    <Column @bind-Field="@context.FirstName"/>
+    <Column @bind-Field="@context.LastName"/>
+    <Column @bind-Field="@context.UserName"/>
+    <Column @bind-Field="@context.Age"/>
+    <Column @bind-Field="@context.Career"/>
+</Table>
+
+
 @code {
-    
+
+
+    List<Student> studentData;
+
+    int pageIndex = 1;
+
+    int pageSize = 20;
+
+    int totalRows = 0;
+
+    string _url;
+
+    bool _loading;
+
+    ODataClient oDataClient;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var settings = new ODataClientSettings(new Uri(webConfigHelper.ENTITY_ODATA_HOST));
+        settings.BeforeRequest += delegate(HttpRequestMessage message)
+        {
+    //      
+            logger.LogInformation($"token->{webConfigHelper.AccessToken}");
+            message.Headers.Add("Authorization", "Bearer " + webConfigHelper.AccessToken);
+        };
+
+        oDataClient = new ODataClient(settings);
+
+        _loading = true;
+        await LoadData(pageIndex, pageIndex);
+        _loading = false;
+    }
+
+    private async void PageIndexChanged(PaginationEventArgs args)
+    {
+        _loading = true;
+        await LoadData(args.Page, args.PageSize);
+
+        _loading = false;
+    }
+
+     async /*Task<List<Student>>*/ Task LoadData(int _pageIndex, int _pageSize)
+    {
+        try
+        {
+            pageIndex = _pageIndex;
+            pageSize = _pageSize;
+            var rsp = await oDataClient.For<Student>().Top(pageSize)
+                .Skip(pageIndex + pageSize).Count()
+                .FindEntriesAsync();
+
+            totalRows = rsp.Count();
+            logger.LogInformation($"count->{rsp.Count()}, total->{rsp.LongCount()}");
+
+            studentData = rsp.ToList();
+            StateHasChanged();
+
+    //return studentData;
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex.Message, ex);
+        }
+
+    // return null;
+    }
+
 }

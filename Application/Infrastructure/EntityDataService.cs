@@ -3,7 +3,7 @@ using Refit;
 
 namespace Application.Infrastructure
 {
-    public interface IEntityDataService
+    public interface EntityDataService
     {
         //C,U,D=>Command objects for Cread, Update & Delete
         //V=>ViewModel for response type
@@ -19,10 +19,5 @@ namespace Application.Infrastructure
 
         [Post("/{entity}/process/{command}")]
         Task<ApiResponse<V>> Process<P, V>(string entity, string command, [Body] P processPayload);
-    }
-
-
-    public class WebConfigHelper
-    {
     }
 }

@@ -4,5 +4,27 @@
     ViewData["Title"] = "Register2";
 }
 
-<h1>Register2</h1>
+<form id="account" method="post" class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal">Register with your email</h1>
 
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <label asp-for="Input.Email"></label>
+    <input asp-for="Input.Email" class="form-control"/>
+    <span asp-validation-for="Input.Email" class="text-danger"></span>
+
+    <label asp-for="Input.Password"></label>
+    <input asp-for="Input.Password" class="form-control"/>
+    <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+    <label asp-for="Input.PasswordConfirm"></label>
+    <input asp-for="Input.PasswordConfirm" class="form-control"/>
+    <span asp-validation-for="Input.PasswordConfirm" class="text-danger"></span>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using Persistence;
 
-namespace API
+namespace API.Config
 {
     public class AppDbFactory : IDesignTimeDbContextFactory<StudentDbContext>
     {

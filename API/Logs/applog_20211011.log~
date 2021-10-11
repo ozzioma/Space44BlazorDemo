@@ -606,4 +606,3 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2021-10-11T23:01:18.8276703+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
 2021-10-11T23:01:18.8284916+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
 2021-10-11T23:01:18.8294574+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"
-2021-10-11T23:04:41.5413959+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...

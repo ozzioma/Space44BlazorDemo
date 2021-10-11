@@ -1805,4 +1805,3 @@ System.Net.Http.HttpRequestException: Response status code does not indicate suc
 2021-10-11T23:01:24.1811825+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
 2021-10-11T23:01:24.1813152+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
 2021-10-11T23:01:24.1813692+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\BlazorServerApp"
-2021-10-11T23:04:39.1199655+01:00 [INF] [Microsoft.Hosting.Lifetime] Application is shutting down...

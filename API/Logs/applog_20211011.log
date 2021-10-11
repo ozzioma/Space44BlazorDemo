@@ -1,0 +1,5 @@
+2021-10-11T01:36:45.0892055+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "https://localhost:5001"
+2021-10-11T01:36:45.1306417+01:00 [INF] [Microsoft.Hosting.Lifetime] Now listening on: "http://localhost:5000"
+2021-10-11T01:36:45.1343678+01:00 [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+2021-10-11T01:36:45.1349425+01:00 [INF] [Microsoft.Hosting.Lifetime] Hosting environment: "Development"
+2021-10-11T01:36:45.1355421+01:00 [INF] [Microsoft.Hosting.Lifetime] Content root path: "F:\blazor\Space44Demo2\API"

@@ -12,7 +12,7 @@ The UI is a Blazor Server app talking to a REST API.
   - Data Access: EF Core 5
   - Database: Embedded SQLite
   - API: ASP.Net Core 5.0 REST API with OData endpoints for easy search and filtering
-  - Middleware: Mediatr for CQRS implementation, Automapper for DTO mapping, FluentValidation for entity/DTO validation
+  - Middleware: Mediatr for CQRS implementation, Automapper for DTO mapping, FluentValidation for entity/DTO validation, Serilog for logging, Refit for typed HTTP clients
   - Security: JWT bearer token authentication using ASP.Net Identity and EF Core
   
 
